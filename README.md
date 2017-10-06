@@ -9,16 +9,23 @@ The SDK also requires Node to be installed. If Node isn't already installed, ple
 > NPM is installed by default when Node is installed
 
 To check if node and npm have been successfully installed, write the following commands in command prompt:
+
 * `node --version`
-* `npm -version` 
-![Version Check](https://apidocs.io/illustration/nodejs?step=versionCheck&workspaceFolder=Raas-Node)  
+* `npm -version`
+
+![Version Check](https://apidocs.io/illustration/nodejs?step=versionCheck&workspaceFolder=Raas-Node)
 
 Now use npm to resolve all dependencies by running the following command in the root directory (of the SDK folder):
-* `npm install`
+
+```bash
+npm install
+```
+
 ![Resolve Dependencies](https://apidocs.io/illustration/nodejs?step=resolveDependency1&workspaceFolder=Raas-Node)
+
 ![Resolve Dependencies](https://apidocs.io/illustration/nodejs?step=resolveDependency2)
 
-This will install all dependencies in the `node_modules` folder. 
+This will install all dependencies in the `node_modules` folder.
 
 Once dependencies are resolved, you will need to move the folder `Raas ` in to your `node_modules` folder.
 
@@ -27,27 +34,38 @@ Once dependencies are resolved, you will need to move the folder `Raas ` in to y
 The following section explains how to use the library in a new project.
 
 ### 1. Open Project Folder
-Open an IDE/Text Editor for JavaScript like Sublime Text. The basic workflow presented here is also applicable if you prefer using a different editor or IDE.  
-Click on `File` and select `Open Folder`
+Open an IDE/Text Editor for JavaScript like Sublime Text. The basic workflow presented here is also applicable if you prefer using a different editor or IDE.
+
+Click on `File` and select `Open Folder`.
+
 ![Open Folder](https://apidocs.io/illustration/nodejs?step=openFolder)
 
 Select the folder of your SDK and click on `Select Folder` to open it up in Sublime Text. The folder will become visible in the bar on the left.
+
 ![Open Project](https://apidocs.io/illustration/nodejs?step=openProject&workspaceFolder=Raas-Node)
 
-
 ### 2. Creating a Test File
-Now right click on the folder name and select the `New File` option to create a new test file.    Save it as `index.js` Now import the generated NodeJS library using the following lines of code:
-```JavaScript
+
+Now right click on the folder name and select the `New File` option to create a new test file. Save it as `index.js` Now import the generated NodeJS library using the following lines of code:
+
+```js
 var lib = require('lib');
 ```
+
 Save changes.
 
 ![Create new file](https://apidocs.io/illustration/nodejs?step=createNewFile&workspaceFolder=Raas-Node)
+
 ![Save new file](https://apidocs.io/illustration/nodejs?step=saveNewFile&workspaceFolder=Raas-Node)
 
 ### 3. Running The Test File
-To run the `index.js` file, open up the command prompt and navigate to the Path where the SDK folder resides. Type the following command to run the file:  
-`node index.js`
+
+To run the `index.js` file, open up the command prompt and navigate to the Path where the SDK folder resides. Type the following command to run the file:
+
+```
+node index.js
+```
+
 ![Run file](https://apidocs.io/illustration/nodejs?step=runProject&workspaceFolder=Raas-Node)
 
 
@@ -56,25 +74,22 @@ To run the `index.js` file, open up the command prompt and navigate to the Path 
 These tests use Mocha framework for testing, coupled with Chai for assertions. These dependencies need to be installed for tests to run.
 Tests can be run in a number of ways:
 
-### Method 1 
-###### (Run all tests)
+### Method 1 (Run all tests)
 
 1. Navigate to the root directory of the SDK folder from command prompt.
 2. Type `mocha --recursive` to run all the tests.
 
-### Method 2
-###### (Run all tests)
+### Method 2 (Run all tests)
 
 1. Navigate to the `../test/Controllers/` directory from command prompt.
 2. Type `mocha *` to run all the tests.
 
-### Method 3
-###### (Run specific controller's tests)
+### Method 3 (Run specific controller's tests)
 
 1. Navigate to the `../test/Controllers/` directory from command prompt.
 2. Type `mocha  Tango Card RaaS v2 APIController`  to run all the tests in that controller file.
 
-> To increase mocha's default timeout, you can change the `TEST_TIMEOUT` parameter's value in `TestBootstrap.js`.  
+> To increase mocha's default timeout, you can change the `TEST_TIMEOUT` parameter's value in `TestBootstrap.js`.
 
 ![Run Tests](https://apidocs.io/illustration/nodejs?step=runTests&controllerName=Tango%20Card%20RaaS%20v2%20APIController)
 
@@ -108,11 +123,12 @@ lib.Configuration.platformKey = "apYPfT6HNONpDRUj3CLGWYt7gvIHONpDRUYPfT6Hj"; // 
 ## <a name="list_of_controllers"></a>List of Controllers
 
 * [AccountsController](#accounts_controller)
-* [OrdersController](#orders_controller)
 * [CatalogController](#catalog_controller)
+* [OrdersController](#orders_controller)
+* [CustomersController](#customers_controller)
 * [ExchangeRatesController](#exchange_rates_controller)
 * [StatusController](#status_controller)
-* [CustomersController](#customers_controller)
+* [FundController](#fund_controller)
 
 ## <a name="accounts_controller"></a>![Class: ](https://apidocs.io/img/class.png ".AccountsController") AccountsController
 
@@ -123,36 +139,6 @@ The singleton instance of the ``` AccountsController ``` class can be accessed f
 ```javascript
 var controller = lib.AccountsController;
 ```
-
-### <a name="get_accounts_by_customer"></a>![Method: ](https://apidocs.io/img/method.png ".AccountsController.getAccountsByCustomer") getAccountsByCustomer
-
-> Gets a list of accounts for a given customer
-
-
-```javascript
-function getAccountsByCustomer(customerIdentifier, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| customerIdentifier |  ``` Required ```  | Customer Identifier |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var customerIdentifier = 'customerIdentifier';
-
-    controller.getAccountsByCustomer(customerIdentifier, function(error, response, context) {
-
-    
-	});
-```
-
-
 
 ### <a name="get_account"></a>![Method: ](https://apidocs.io/img/method.png ".AccountsController.getAccount") getAccount
 
@@ -179,7 +165,29 @@ function getAccount(accountIdentifier, callback)
     controller.getAccount(accountIdentifier, function(error, response, context) {
 
     
-	});
+    });
+```
+
+
+
+### <a name="get_all_accounts"></a>![Method: ](https://apidocs.io/img/method.png ".AccountsController.getAllAccounts") getAllAccounts
+
+> Gets all accounts under the platform
+
+
+```javascript
+function getAllAccounts(callback)
+```
+
+#### Example Usage
+
+```javascript
+
+
+    controller.getAllAccounts(function(error, response, context) {
+
+    
+    });
 ```
 
 
@@ -211,18 +219,60 @@ function createAccount(customerIdentifier, body, callback)
     controller.createAccount(customerIdentifier, body, function(error, response, context) {
 
     
-	});
+    });
 ```
 
 
 
-### <a name="get_all_accounts"></a>![Method: ](https://apidocs.io/img/method.png ".AccountsController.getAllAccounts") getAllAccounts
+### <a name="get_accounts_by_customer"></a>![Method: ](https://apidocs.io/img/method.png ".AccountsController.getAccountsByCustomer") getAccountsByCustomer
 
-> Gets all accounts under the platform
+> Gets a list of accounts for a given customer
 
 
 ```javascript
-function getAllAccounts(callback)
+function getAccountsByCustomer(customerIdentifier, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| customerIdentifier |  ``` Required ```  | Customer Identifier |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var customerIdentifier = 'customerIdentifier';
+
+    controller.getAccountsByCustomer(customerIdentifier, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="catalog_controller"></a>![Class: ](https://apidocs.io/img/class.png ".CatalogController") CatalogController
+
+### Get singleton instance
+
+The singleton instance of the ``` CatalogController ``` class can be accessed from the API Client.
+
+```javascript
+var controller = lib.CatalogController;
+```
+
+### <a name="get_catalog"></a>![Method: ](https://apidocs.io/img/method.png ".CatalogController.getCatalog") getCatalog
+
+> Get Catalog
+
+
+```javascript
+function getCatalog(callback)
 ```
 
 #### Example Usage
@@ -230,10 +280,10 @@ function getAllAccounts(callback)
 ```javascript
 
 
-    controller.getAllAccounts(function(error, response, context) {
+    controller.getCatalog(function(error, response, context) {
 
     
-	});
+    });
 ```
 
 
@@ -249,36 +299,6 @@ The singleton instance of the ``` OrdersController ``` class can be accessed fro
 ```javascript
 var controller = lib.OrdersController;
 ```
-
-### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.createOrder") createOrder
-
-> TODO: Add a method description
-
-
-```javascript
-function createOrder(body, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var body = new CreateOrderRequestModel({"key":"value"});
-
-    controller.createOrder(body, function(error, response, context) {
-
-    
-	});
-```
-
-
 
 ### <a name="get_order"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.getOrder") getOrder
 
@@ -305,24 +325,24 @@ function getOrder(referenceOrderID, callback)
     controller.getOrder(referenceOrderID, function(error, response, context) {
 
     
-	});
+    });
 ```
 
 
 
-### <a name="create_resend_order"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.createResendOrder") createResendOrder
+### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.createOrder") createOrder
 
 > TODO: Add a method description
 
 
 ```javascript
-function createResendOrder(referenceOrderID, callback)
+function createOrder(body, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| referenceOrderID |  ``` Required ```  | TODO: Add a parameter description |
+| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -330,12 +350,12 @@ function createResendOrder(referenceOrderID, callback)
 
 ```javascript
 
-    var referenceOrderID = 'referenceOrderID';
+    var body = new CreateOrderRequestModel({"key":"value"});
 
-    controller.createResendOrder(referenceOrderID, function(error, response, context) {
+    controller.createOrder(body, function(error, response, context) {
 
     
-	});
+    });
 ```
 
 
@@ -372,117 +392,43 @@ function getOrders(input, callback)
         input['externalRefID'] = 'externalRefID';
         input['startDate'] = date("D M d, Y G:i");
         input['endDate'] = date("D M d, Y G:i");
-        input['elementsPerBlock'] = 184;
-        input['page'] = 184;
+        input['elementsPerBlock'] = 78;
+        input['page'] = 78;
 
     controller.getOrders(input, function(error, response, context) {
 
     
-	});
+    });
 ```
 
 
 
-[Back to List of Controllers](#list_of_controllers)
+### <a name="create_resend_order"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.createResendOrder") createResendOrder
 
-## <a name="catalog_controller"></a>![Class: ](https://apidocs.io/img/class.png ".CatalogController") CatalogController
-
-### Get singleton instance
-
-The singleton instance of the ``` CatalogController ``` class can be accessed from the API Client.
-
-```javascript
-var controller = lib.CatalogController;
-```
-
-### <a name="get_catalog"></a>![Method: ](https://apidocs.io/img/method.png ".CatalogController.getCatalog") getCatalog
-
-> Get Catalog
+> TODO: Add a method description
 
 
 ```javascript
-function getCatalog(callback)
+function createResendOrder(referenceOrderID, callback)
 ```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| referenceOrderID |  ``` Required ```  | TODO: Add a parameter description |
+
+
 
 #### Example Usage
 
 ```javascript
 
+    var referenceOrderID = 'referenceOrderID';
 
-    controller.getCatalog(function(error, response, context) {
-
-    
-	});
-```
-
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="exchange_rates_controller"></a>![Class: ](https://apidocs.io/img/class.png ".ExchangeRatesController") ExchangeRatesController
-
-### Get singleton instance
-
-The singleton instance of the ``` ExchangeRatesController ``` class can be accessed from the API Client.
-
-```javascript
-var controller = lib.ExchangeRatesController;
-```
-
-### <a name="get_exchange_rates"></a>![Method: ](https://apidocs.io/img/method.png ".ExchangeRatesController.getExchangeRates") getExchangeRates
-
-> Retrieve current exchange rates
-
-
-```javascript
-function getExchangeRates(callback)
-```
-
-#### Example Usage
-
-```javascript
-
-
-    controller.getExchangeRates(function(error, response, context) {
+    controller.createResendOrder(referenceOrderID, function(error, response, context) {
 
     
-	});
-```
-
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="status_controller"></a>![Class: ](https://apidocs.io/img/class.png ".StatusController") StatusController
-
-### Get singleton instance
-
-The singleton instance of the ``` StatusController ``` class can be accessed from the API Client.
-
-```javascript
-var controller = lib.StatusController;
-```
-
-### <a name="get_system_status"></a>![Method: ](https://apidocs.io/img/method.png ".StatusController.getSystemStatus") getSystemStatus
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Retrieve system status
-
-
-```javascript
-function getSystemStatus(callback)
-```
-
-#### Example Usage
-
-```javascript
-
-
-    controller.getSystemStatus(function(error, response, context) {
-
-    
-	});
+    });
 ```
 
 
@@ -524,7 +470,7 @@ function getCustomer(customerIdentifier, callback)
     controller.getCustomer(customerIdentifier, function(error, response, context) {
 
     
-	});
+    });
 ```
 
 
@@ -554,7 +500,7 @@ function createCustomer(body, callback)
     controller.createCustomer(body, function(error, response, context) {
 
     
-	});
+    });
 ```
 
 
@@ -576,7 +522,261 @@ function getAllCustomers(callback)
     controller.getAllCustomers(function(error, response, context) {
 
     
-	});
+    });
+```
+
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="exchange_rates_controller"></a>![Class: ](https://apidocs.io/img/class.png ".ExchangeRatesController") ExchangeRatesController
+
+### Get singleton instance
+
+The singleton instance of the ``` ExchangeRatesController ``` class can be accessed from the API Client.
+
+```javascript
+var controller = lib.ExchangeRatesController;
+```
+
+### <a name="get_exchange_rates"></a>![Method: ](https://apidocs.io/img/method.png ".ExchangeRatesController.getExchangeRates") getExchangeRates
+
+> Retrieve current exchange rates
+
+
+```javascript
+function getExchangeRates(callback)
+```
+
+#### Example Usage
+
+```javascript
+
+
+    controller.getExchangeRates(function(error, response, context) {
+
+    
+    });
+```
+
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="status_controller"></a>![Class: ](https://apidocs.io/img/class.png ".StatusController") StatusController
+
+### Get singleton instance
+
+The singleton instance of the ``` StatusController ``` class can be accessed from the API Client.
+
+```javascript
+var controller = lib.StatusController;
+```
+
+### <a name="get_system_status"></a>![Method: ](https://apidocs.io/img/method.png ".StatusController.getSystemStatus") getSystemStatus
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Retrieve system status
+
+
+```javascript
+function getSystemStatus(callback)
+```
+
+#### Example Usage
+
+```javascript
+
+
+    controller.getSystemStatus(function(error, response, context) {
+
+    
+    });
+```
+
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="fund_controller"></a>![Class: ](https://apidocs.io/img/class.png ".FundController") FundController
+
+### Get singleton instance
+
+The singleton instance of the ``` FundController ``` class can be accessed from the API Client.
+
+```javascript
+var controller = lib.FundController;
+```
+
+### <a name="get_credit_cards"></a>![Method: ](https://apidocs.io/img/method.png ".FundController.getCreditCards") getCreditCards
+
+> List all credit cards registered on this platform
+
+
+```javascript
+function getCreditCards(callback)
+```
+
+#### Example Usage
+
+```javascript
+
+
+    controller.getCreditCards(function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="create_credit_card"></a>![Method: ](https://apidocs.io/img/method.png ".FundController.createCreditCard") createCreditCard
+
+> Register a new credit card
+
+
+```javascript
+function createCreditCard(body, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var body = new CreateCreditCardRequestModel({"key":"value"});
+
+    controller.createCreditCard(body, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="create_unregister_credit_card"></a>![Method: ](https://apidocs.io/img/method.png ".FundController.createUnregisterCreditCard") createUnregisterCreditCard
+
+> Unregister a credit card
+
+
+```javascript
+function createUnregisterCreditCard(body, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var body = new UnregisterCreditCardRequestModel({"key":"value"});
+
+    controller.createUnregisterCreditCard(body, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="create_deposit"></a>![Method: ](https://apidocs.io/img/method.png ".FundController.createDeposit") createDeposit
+
+> Fund an account
+
+
+```javascript
+function createDeposit(body, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var body = new DepositRequestModel({"key":"value"});
+
+    controller.createDeposit(body, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="get_deposit"></a>![Method: ](https://apidocs.io/img/method.png ".FundController.getDeposit") getDeposit
+
+> Get details for a specific credit card deposit
+
+
+```javascript
+function getDeposit(depositId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| depositId |  ``` Required ```  | Deposit ID |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var depositId = 'depositId';
+
+    controller.getDeposit(depositId, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="get_credit_card"></a>![Method: ](https://apidocs.io/img/method.png ".FundController.getCreditCard") getCreditCard
+
+> Get details for a specific credit card
+
+
+```javascript
+function getCreditCard(token, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| token |  ``` Required ```  | Card Token |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var token = 'token';
+
+    controller.getCreditCard(token, function(error, response, context) {
+
+    
+    });
 ```
 
 
