@@ -3,7 +3,8 @@ node_js:
   - "4.5"
 # command to install dependencies
 install: npm install
-# command to run linter and tests
 script:
+    # command to run linter
   - npm run lint
+    # command to run tests
   - npm test
