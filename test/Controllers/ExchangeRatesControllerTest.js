@@ -22,7 +22,7 @@ describe("ExchangeRatesController Tests", function tests() {
     /**
      * Tests if we can successfully retrieve exchange rates
      */
-    it("should testTestRetrieveExchangeRates response", function testTestRetrieveExchangeRatesTest(done) {
+    it("should testRetrieveExchangeRates response", function testRetrieveExchangeRatesTest(done) {
         controller.getExchangeRates(function callback(error, response, context) {
             // test response code
             assert.equal(200, context.response.statusCode);

@@ -29,7 +29,7 @@ describe("FundController Tests", function tests() {
     /**
      * Tests retrieving deposit information
      */
-    it("should testTestGetDeposit response", function testTestGetDepositTest(done) {
+    it("should testGetDeposit response", function testGetDepositTest(done) {
         // parameters for the API call
         let depositId = 'RAD-180426-5407';
 
@@ -53,7 +53,7 @@ describe("FundController Tests", function tests() {
     /**
      * Tests adding funds to an account
      */
-    it("should testTestAddFunds response", function testTestAddFundsTest(done) {
+    it("should testAddFunds response", function testAddFundsTest(done) {
         // parameters for the API call
         let body = baseController.getObjectMapper().mapObject({   "accountIdentifier": "sdkautotest5",   "amount": 1.25,   "creditCardToken": "56ac1a30-6ba2-4047-9b8c-70f97a5502c5",   "customerIdentifier": "sdkautotest4" }, 'DepositRequestModel');
 
@@ -77,7 +77,7 @@ describe("FundController Tests", function tests() {
     /**
      * Tests retrieving all credit cards for a platform
      */
-    it("should testTestGetCreditCards response", function testTestGetCreditCardsTest(done) {
+    it("should testGetCreditCards response", function testGetCreditCardsTest(done) {
         controller.getCreditCards(function callback(error, response, context) {
             // test response code
             assert.equal(200, context.response.statusCode);
@@ -113,7 +113,7 @@ describe("FundController Tests", function tests() {
     /**
      * Tests retrieving a single credit card
      */
-    it("should testTestGetCreditCard response", function testTestGetCreditCardTest(done) {
+    it("should testGetCreditCard response", function testGetCreditCardTest(done) {
         // parameters for the API call
         let token = '56ac1a30-6ba2-4047-9b8c-70f97a5502c5';
 

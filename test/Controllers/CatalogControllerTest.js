@@ -22,7 +22,7 @@ describe("CatalogController Tests", function tests() {
     /**
      * Tests if we can successfully retrieve a platform's catalog
      */
-    it("should testTestRetrieveCatalog response", function testTestRetrieveCatalogTest(done) {
+    it("should testRetrieveCatalog response", function testRetrieveCatalogTest(done) {
         controller.getCatalog(function callback(error, response, context) {
             // test response code
             assert.equal(200, context.response.statusCode);

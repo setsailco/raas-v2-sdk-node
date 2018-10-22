@@ -25,7 +25,7 @@ describe("AccountsController Tests", function tests() {
     /**
      * Tests retrieving all accounts under a specific customer
      */
-    it("should testTestGetAllCustomerAccounts response", function testTestGetAllCustomerAccountsTest(done) {
+    it("should testGetAllCustomerAccounts response", function testGetAllCustomerAccountsTest(done) {
         // parameters for the API call
         let customerIdentifier = 'sdkautotest1';
 
@@ -56,7 +56,7 @@ describe("AccountsController Tests", function tests() {
     /**
      * Tests retrieving all accounts
      */
-    it("should testTestGetAllAccounts response", function testTestGetAllAccountsTest(done) {
+    it("should testGetAllAccounts response", function testGetAllAccountsTest(done) {
         controller.getAllAccounts(function callback(error, response, context) {
             // test response code
             assert.equal(200, context.response.statusCode);
@@ -80,7 +80,7 @@ describe("AccountsController Tests", function tests() {
     /**
      * Tests retrieving a single account
      */
-    it("should testTestGetSingleAccount response", function testTestGetSingleAccountTest(done) {
+    it("should testGetSingleAccount response", function testGetSingleAccountTest(done) {
         // parameters for the API call
         let accountIdentifier = 'sdkautotest2';
 

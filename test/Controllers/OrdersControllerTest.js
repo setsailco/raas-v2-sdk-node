@@ -27,7 +27,7 @@ describe("OrdersController Tests", function tests() {
     /**
      * Tests retrieving a single order
      */
-    it("should testTestGetOrder response", function testTestGetOrderTest(done) {
+    it("should testGetOrder response", function testGetOrderTest(done) {
         // parameters for the API call
         let referenceOrderID = 'RA180426-1401-64';
 
@@ -70,11 +70,11 @@ describe("OrdersController Tests", function tests() {
   "createdAt": "2018-04-26T20: 08: 59.624Z",
   "reward": {
     "credentials": {
-      "Redemption URL": "https: //sandbox.rewardlink.io/r/1/ed0HtzSblNV6oFddNnnlf68eXzGQoREvcxwxu_Vi5Wk"
+      "Redemption Link": "https: //sandbox.rewardlink.io/r/1/ed0HtzSblNV6oFddNnnlf68eXzGQoREvcxwxu_Vi5Wk"
     },
     "credentialList": [
       {
-        "label": "Redemption URL",
+        "label": "Redemption Link",
         "value": "https: //sandbox.rewardlink.io/r/1/ed0HtzSblNV6oFddNnnlf68eXzGQoREvcxwxu_Vi5Wk",
         "type": "url",
         "credentialType": "redemptionUrl"
@@ -90,7 +90,7 @@ describe("OrdersController Tests", function tests() {
     /**
      * Tests placing an order with the minimum parameters required
      */
-    it("should testTestPlaceOrderWithMinimumCriteria response", function testTestPlaceOrderWithMinimumCriteriaTest(done) {
+    it("should testPlaceOrderWithMinimumCriteria response", function testPlaceOrderWithMinimumCriteriaTest(done) {
         // parameters for the API call
         let body = baseController.getObjectMapper().mapObject({   "accountIdentifier": "sdkautotest5",   "amount": 1.00,   "customerIdentifier": "sdkautotest4",   "sendEmail": false,   "utid": "U561593" }, 'CreateOrderRequestModel');
 
@@ -107,10 +107,6 @@ describe("OrdersController Tests", function tests() {
     "value": 1,
     "currencyCode": "USD",
     "total": 1
-  },
-  "marginShare": {
-    "value": 0,
-    "currencyCode": "USD"
   },
   "denomination": {
     "value": 1,
@@ -133,11 +129,11 @@ describe("OrdersController Tests", function tests() {
   "createdAt": "2018-04-26T20: 08: 59.624Z",
   "reward": {
     "credentials": {
-      "Redemption URL": "https: //sandbox.rewardlink.io/r/1/ed0HtzSblNV6oFddNnnlf68eXzGQoREvcxwxu_Vi5Wk"
+      "Redemption Link": "https: //sandbox.rewardlink.io/r/1/ed0HtzSblNV6oFddNnnlf68eXzGQoREvcxwxu_Vi5Wk"
     },
     "credentialList": [
       {
-        "label": "Redemption URL",
+        "label": "Redemption Link",
         "value": "https: //sandbox.rewardlink.io/r/1/ed0HtzSblNV6oFddNnnlf68eXzGQoREvcxwxu_Vi5Wk",
         "type": "url",
         "credentialType": "redemptionUrl"

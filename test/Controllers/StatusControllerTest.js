@@ -22,7 +22,7 @@ describe("StatusController Tests", function tests() {
     /**
      * Tests if we can retrieve the system status
      */
-    it("should testTestStatusIsOK response", function testTestStatusIsOKTest(done) {
+    it("should testStatusIsOK response", function testStatusIsOKTest(done) {
         controller.getSystemStatus(function callback(error, response, context) {
             // test response code
             assert.equal(200, context.response.statusCode);

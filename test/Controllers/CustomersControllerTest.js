@@ -24,7 +24,7 @@ describe("CustomersController Tests", function tests() {
     /**
      * Tests retrieving all customers
      */
-    it("should testTestGetAllCustomers response", function testTestGetAllCustomersTest(done) {
+    it("should testGetAllCustomers response", function testGetAllCustomersTest(done) {
         controller.getAllCustomers(function callback(error, response, context) {
             // test response code
             assert.equal(200, context.response.statusCode);
@@ -60,7 +60,7 @@ describe("CustomersController Tests", function tests() {
     /**
      * Tests retrieving a single customer
      */
-    it("should testTestGetCustomer response", function testTestGetCustomerTest(done) {
+    it("should testGetCustomer response", function testGetCustomerTest(done) {
         // parameters for the API call
         let customerIdentifier = 'sdkautotest1';
 
