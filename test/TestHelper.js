@@ -1,7 +1,10 @@
-/*
- * This file was automatically generated for Tango Card, Inc. by APIMATIC v2.0 ( https://apimatic.io )
+/**
+ * raas
+ *
+ * This file was automatically generated for Tango Card, Inc. by APIMATIC v2.0 ( https://apimatic.io ).
  */
- 'use strict';
+
+'use strict';
 
 /**
  * Contains utility methods for comparing objects and arrays

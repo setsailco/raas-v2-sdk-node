@@ -1,6 +1,6 @@
 {
   "name": "raas",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "With this RESTful API you can integrate a global reward or incentive program into your app or platform. If you have any questions or if you'd like to receive your own credentials, please contact us at devsupport@tangocard.com.",
   "main": "./lib/index.js",
   "scripts": {
@@ -8,9 +8,9 @@
     "test": "mocha --recursive"
   },
   "keywords": [],
-  "author": "APIMATIC SDK Generator",
+  "author": "Tango Card",
   "bugs": {
-    "email": "support@apimatic.io"
+    "email": "devsupport@tangocard.com"
   },
   "devDependencies": {
     "eslint": "^3.18.0",

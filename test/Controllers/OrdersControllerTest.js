@@ -1,9 +1,10 @@
-/*
+/**
  * raas
  *
- * This file was automatically generated for Tango Card, Inc. by APIMATIC v2.0 ( https://apimatic.io )
+ * This file was automatically generated for Tango Card, Inc. by APIMATIC v2.0 ( https://apimatic.io ).
  */
- 'use strict';
+
+'use strict';
 
 const chai = require('chai');
 const assert = chai.assert;
@@ -75,7 +76,8 @@ describe("OrdersController Tests", function tests() {
       {
         "label": "Redemption URL",
         "value": "https: //sandbox.rewardlink.io/r/1/ed0HtzSblNV6oFddNnnlf68eXzGQoREvcxwxu_Vi5Wk",
-        "type": "url"
+        "type": "url",
+        "credentialType": "redemptionUrl"
       }
     ],
     "redemptionInstructions": "<p>&bull; Click on the redemption link above to activate your Reward Link.<br />\r\n&bull; Next, you will be able to spend your balance on retail gift cards.</p>\r\n\r\n<p>If you don&#39;t want to spend your entire Reward Link value right away, save the email or URL and return via the redemption link - your value will be waiting to be spent. This allows you to store the balance to redeem at another time.</p>\r\n"
@@ -137,7 +139,8 @@ describe("OrdersController Tests", function tests() {
       {
         "label": "Redemption URL",
         "value": "https: //sandbox.rewardlink.io/r/1/ed0HtzSblNV6oFddNnnlf68eXzGQoREvcxwxu_Vi5Wk",
-        "type": "url"
+        "type": "url",
+        "credentialType": "redemptionUrl"
       }
     ],
     "redemptionInstructions": "<p>&bull; Click on the redemption link above to activate your Reward Link.<br />\r\n&bull; Next, you will be able to spend your balance on retail gift cards.</p>\r\n\r\n<p>If you don&#39;t want to spend your entire Reward Link value right away, save the email or URL and return via the redemption link - your value will be waiting to be spent. This allows you to store the balance to redeem at another time.</p>\r\n"

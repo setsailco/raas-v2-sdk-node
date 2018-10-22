@@ -1,9 +1,10 @@
-/*
+/**
  * raas
  *
- * This file was automatically generated for Tango Card, Inc. by APIMATIC v2.0 ( https://apimatic.io )
+ * This file was automatically generated for Tango Card, Inc. by APIMATIC v2.0 ( https://apimatic.io ).
  */
- 'use strict';
+
+'use strict';
 
 const chai = require('chai');
 const assert = chai.assert;
