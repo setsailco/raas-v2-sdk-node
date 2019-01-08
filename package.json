@@ -1,13 +1,12 @@
 {
   "name": "raas",
-  "version": "2.3.0",
+  "version": "2.3.3",
   "description": "With this RESTful API you can integrate a global reward or incentive program into your app or platform. If you have any questions or if you'd like to receive your own credentials, please contact us at devsupport@tangocard.com.",
   "main": "./lib/index.js",
   "scripts": {
     "lint": "eslint lib",
     "test": "mocha --recursive"
   },
-  "keywords": [],
   "author": "Tango Card",
   "bugs": {
     "email": "devsupport@tangocard.com"
@@ -17,13 +16,13 @@
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.10.3"
+    "eslint-plugin-react": "^6.10.3",
+    "mocha": "^5.2.0",
+    "chai": "^3.5.0"
   },
-    "dependencies": {
-    "request": "^2.55.0",
-    "mocha": "^3.1.2",
-    "chai": "^3.5.0",
+  "dependencies": {
     "moment": "^2.17.1",
+    "request": "^2.55.0",
     "winston": "^2.1.1"
   },
   "eslintConfig": {
@@ -34,7 +33,10 @@
       "mocha": true
     },
     "rules": {
-      "indent": ["error", 4],
+      "indent": [
+        "error",
+        4
+      ],
       "no-underscore-dangle": 0,
       "strict": 0,
       "prefer-rest-params": 0
